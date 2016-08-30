@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+#settings file which contains some sensitive info: 
+PythonAzureFunctionSample/settings.json
