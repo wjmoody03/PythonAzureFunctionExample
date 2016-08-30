@@ -4,14 +4,23 @@
 import json
 import os
 
-class config:
+class Config:
 
     def __init__(self):
         try:
+            #in Azure the app settings will be exposed as environment variables. This is essentially
+            #a messy way of determining whether we are running in azure or locally. 
             self.LendingClubUserName = os.environ["LendingClubUserName"]
-            self.env = "azure"
-            self.text = "i am running there"
+            dict = os.environ
         except KeyError:
-            self.env = "local"
-            self.text = "i am running here"
+            #NOTE: If running locally, you must create a file in this directory called settings.json
+            #which contains an object with all required settings/variables referenced below
+            with open('settings.json') as data_file:    
+                data = json.load(data_file)
+                dict = data
 
+        #now we know where we need to get our settings from. Let's expose them on this object 
+        self.lendingClubUserName = dict["LendingClubUserName"]
+        self.lendingClubPassword = dict["LendingClubPassword"]
+        self.connectionString = dict["ConnectionString"]
+        

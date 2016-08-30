@@ -1,7 +1,10 @@
 import settings
 import json
+import data
 
-config = settings.config()
+config = settings.Config()
+data = data.Database(config.connectionString)
 
-
-print(json.dumps(config.__dict__))
+configVals = json.dumps(config.__dict__)
+print(configVals)
+data.save(configVals)
