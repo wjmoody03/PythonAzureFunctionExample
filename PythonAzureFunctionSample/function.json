@@ -3,8 +3,9 @@
     {
       "schedule": "0 0 0/1 1/1 * ? *",
       "name": "lendingClubJobTimer",
-      "type": "lendingClubTrigger",
-      "direction": "in"
+      "type": "timerTrigger",
+      "direction": "in",
+      "runOnStartup":true
     }
   ],
   "disabled": false
