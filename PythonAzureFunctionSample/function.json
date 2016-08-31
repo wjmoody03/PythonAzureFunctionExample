@@ -1,11 +1,10 @@
 {
   "bindings": [
     {
-      "schedule": "0 * * * * *",
       "name": "lendingClubJobTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "runOnStartup":true
+	  "schedule": "0 * * * * *"
     },
 	{
       "type": "manualTrigger",
