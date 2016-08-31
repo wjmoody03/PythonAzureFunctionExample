@@ -6,6 +6,10 @@
       "type": "timerTrigger",
       "direction": "in",
       "runOnStartup":true
+    },
+	{
+      "type": "manualTrigger",
+      "direction": "in"
     }
   ],
   "disabled": false
